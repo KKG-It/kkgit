@@ -1,0 +1,29 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hent kode fra repoet
+        uses: actions/checkout@v4
+
+      - name: Last opp til Domeneshop via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }} 
+          local-dir: ./
+          server-dir: /www/
+          # Ekskluder filer/mapper som ikke skal opp på serveren
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            storage/logs/**
+            storage/config/system_overrides.json

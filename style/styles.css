@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #f4f7fb;
+	color: #1f2937;
+	font-family: Arial, sans-serif;
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+	color: #2563eb;
+	font-size: 3rem;
+}
+
+h4 {
+	margin: 0.75rem 0 0;
+	color: #4b5563;
+	font-size: 1.1rem;
+	font-weight: 400;
+}
+
+@media (max-width: 480px) {
+	body {
+		padding: 1.5rem;
+	}
+
+	h1 {
+		font-size: 2.25rem;
+	}
+}
