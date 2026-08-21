@@ -1,15 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>KKG-IT | Hjem</title>
+        <meta name="description" content="KKG-IT er samlesiden for alt du trenger som elev - passord, skoleplattformer og dokumenter.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
         <link href="style/styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>KKG-IT</h1>
-        <h4>Her finner du alt du trenger om KKG It</h4>
-        <h8>Denne siden er under utvikling</h8>
-        <script src="js/script.js"></script>
+        <header class="site-header">
+            <div class="brand">
+                <svg class="brand-shield" width="40" height="46" viewBox="0 0 40 46" aria-hidden="true">
+                    <path d="M2 2h36v22c0 12-9 18-18 20-9-2-18-8-18-20V2z" fill="var(--agder-red)"/>
+                    <path d="M20 10c1 3 3 4 5 4-1 2-1 3 0 5-2-1-3 0-4 2 0-2-1-3-2-3-1 0-2 1-2 3-1-2-2-3-4-2 1-2 1-3 0-5 2 0 4-1 5-4 0 2 1 3 2 3s2-1 2-3z" fill="var(--agder-gold)"/>
+                    <path d="M19 19h2v9h-2z" fill="var(--agder-gold)"/>
+                </svg>
+                <div class="brand-name">
+                    <span class="brand-name__top">KKG</span>
+                    <span class="brand-name__bottom">videregående skole</span>
+                </div>
+            </div>
+            <p class="header-note">Denne siden er under utvikling</p>
+        </header>
+
+        <section class="hero">
+            <div class="hero__shapes" aria-hidden="true"></div>
+            <div class="hero__content">
+                <h1>Velkommen til KKG-IT</h1>
+                <p>Her finner du alt du trenger - fra å tilbakestille passord til å logge inn på skoleplattformer og lese dokumenter om det som skjer hos oss.</p>
+                <label class="hero__search" for="hub-search">
+                    <span class="visually-hidden">Søk i snarveier</span>
+                    <input type="search" id="hub-search" placeholder="Hva leter du etter?">
+                </label>
+            </div>
+        </section>
+
+        <main id="hub-grid" class="hub-grid" aria-live="polite">
+            <!-- Kortene bygges automatisk fra hubLinks i js/script.js -->
+        </main>
+
+        <footer class="site-footer">
+            <p>Finner du ikke det du leter etter? Ta kontakt med IT-support.</p>
+            <p class="site-footer__small">KKG-IT &middot; Denne siden er under utvikling</p>
+        </footer>
+
+        <script src="js/script.js" defer></script>
     </body>
 </html>

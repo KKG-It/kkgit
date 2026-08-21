@@ -1,47 +1,223 @@
+:root {
+	--agder-red: #E01F1D;
+	--agder-gold: #EBD6A3;
+	--blue-dark: #352D86;
+	--blue-light: #00A9DA;
+	--green-dark: #00695A;
+	--green-light: #8DC63F;
+	--rust: #9F3A14;
+	--yellow: #FAC800;
+	--grey-light: #ECEAE6;
+	--grey-dark: #5B4E47;
+	--ink: #1f2937;
+
+	--font-heading: "Rubik", Arial, sans-serif;
+	--font-body: Arial, sans-serif;
+}
+
 * {
 	box-sizing: border-box;
 }
 
 body {
-	min-height: 100vh;
 	margin: 0;
-	padding: 2rem;
+	background: #fff;
+	color: var(--ink);
+	font-family: var(--font-body);
+}
+
+h1, h2, h3, .brand-name {
+	font-family: var(--font-heading);
+	margin: 0;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+/* Header */
+.site-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 1rem 1.5rem;
+	border-bottom: 1px solid var(--grey-light);
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.brand-shield {
+	flex-shrink: 0;
+}
+
+.brand-name {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background: #f4f7fb;
-	color: #1f2937;
-	font-family: Arial, sans-serif;
+	line-height: 1.1;
+}
+
+.brand-name__top {
+	font-weight: 700;
+	font-size: 1.4rem;
+	letter-spacing: 0.02em;
+}
+
+.brand-name__bottom {
+	font-weight: 400;
+	font-size: 0.85rem;
+	color: var(--grey-dark);
+}
+
+.header-note {
+	margin: 0;
+	font-size: 0.8rem;
+	color: var(--grey-dark);
+}
+
+/* Hero */
+.hero {
+	position: relative;
+	overflow: hidden;
+	padding: 3rem 1.5rem;
+	background: var(--blue-dark);
+	color: #fff;
 	text-align: center;
 }
 
-h1 {
+.hero__shapes {
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(135deg, transparent 45%, rgba(255,255,255,0.12) 45%, rgba(255,255,255,0.12) 55%, transparent 55%),
+		linear-gradient(45deg, var(--blue-light) 0%, transparent 55%),
+		linear-gradient(-45deg, var(--blue-dark) 0%, transparent 60%);
+	opacity: 0.9;
+}
+
+.hero__content {
+	position: relative;
+	max-width: 40rem;
+	margin: 0 auto;
+}
+
+.hero h1 {
+	font-size: 2.25rem;
+}
+
+.hero p {
+	margin: 0.75rem 0 1.5rem;
+	font-size: 1.05rem;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.hero__search input {
+	width: 100%;
+	max-width: 24rem;
+	padding: 0.75rem 1rem;
+	border: none;
+	border-radius: 999px;
+	font-size: 1rem;
+	font-family: var(--font-body);
+}
+
+.hero__search input:focus {
+	outline: 3px solid var(--yellow);
+}
+
+/* Hub grid */
+.hub-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	gap: 1.25rem;
+	padding: 2.5rem 1.5rem;
+	max-width: 72rem;
+	margin: 0 auto;
+}
+
+.hub-card {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1.5rem;
+	border-radius: 0.75rem;
+	color: #fff;
+	text-decoration: none;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hub-card:hover,
+.hub-card:focus-visible {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+	outline: none;
+}
+
+.hub-card__icon {
+	font-size: 1.75rem;
+}
+
+.hub-card__title {
+	font-family: var(--font-heading);
+	font-size: 1.15rem;
+	font-weight: 500;
+}
+
+.hub-card__desc {
 	margin: 0;
-	color: #2563eb;
-	font-size: 3rem;
+	font-size: 0.92rem;
+	color: rgba(255, 255, 255, 0.9);
 }
 
-h4 {
-	margin: 0.75rem 0 0;
-	color: #4b5563;
-	font-size: 1.1rem;
-	font-weight: 400;
+.hub-card.is-hidden {
+	display: none;
 }
 
-h8 {
-	margin: 1rem 0 0;
-	color: #6b7280;
+.hub-card--0 { background: var(--blue-dark); }
+.hub-card--1 { background: var(--blue-light); }
+.hub-card--2 { background: var(--green-dark); }
+.hub-card--3 { background: var(--green-light); color: var(--ink); }
+.hub-card--3 .hub-card__desc { color: rgba(31, 41, 55, 0.85); }
+.hub-card--4 { background: var(--rust); }
+.hub-card--5 { background: var(--yellow); color: var(--ink); }
+.hub-card--5 .hub-card__desc { color: rgba(31, 41, 55, 0.85); }
+
+/* Footer */
+.site-footer {
+	padding: 1.5rem;
+	text-align: center;
+	border-top: 1px solid var(--grey-light);
+	color: var(--grey-dark);
 	font-size: 0.9rem;
-	font-weight: 300;
+}
+
+.site-footer__small {
+	margin-top: 0.25rem;
+	font-size: 0.8rem;
+	color: #9ca3af;
 }
 
 @media (max-width: 480px) {
-	body {
-		padding: 1.5rem;
+	.site-header {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 
-	h1 {
-		font-size: 2.25rem;
+	.hero h1 {
+		font-size: 1.75rem;
+	}
+
+	.hub-grid {
+		grid-template-columns: 1fr;
 	}
 }
