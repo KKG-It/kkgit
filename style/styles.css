@@ -29,6 +29,13 @@ h4 {
 	font-weight: 400;
 }
 
+h8 {
+	margin: 1rem 0 0;
+	color: #6b7280;
+	font-size: 0.9rem;
+	font-weight: 300;
+}
+
 @media (max-width: 480px) {
 	body {
 		padding: 1.5rem;
