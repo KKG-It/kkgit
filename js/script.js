@@ -3,40 +3,17 @@
 const hubLinks = [
 	{
 		title: "Glemt passord",
-		description: "Tilbakestill skolepassordet ditt (FEIDE).",
-		url: "#",
+		description: "Tilbakestill skolepassordet ditt til edu brukeren.",
+		url: "https://nyttpassord.ikt-agder.no/",
 		icon: "🔑",
 	},
 	{
 		title: "Skoleplattformer",
-		description: "Logg inn på itslearning, Teams og andre skoleverktøy.",
-		url: "#",
+		description: "Logg inn på Visma",
+		url: "https://kristiansand-katedralskole.inschool.visma.no/Login.jsp#/",
 		icon: "💻",
 	},
-	{
-		title: "Dokumenter og skjema",
-		description: "Ordensreglement, søknadsskjema og annen dokumentasjon.",
-		url: "#",
-		icon: "📄",
-	},
-	{
-		title: "Skolerute og fravær",
-		description: "Se datoer, fridager og regler for fravær.",
-		url: "#",
-		icon: "📅",
-	},
-	{
-		title: "Wifi og utstyr",
-		description: "Koble til skole-wifi og få hjelp med Chromebook.",
-		url: "#",
-		icon: "📶",
-	},
-	{
-		title: "Kontakt IT-support",
-		description: "Få hjelp med tekniske problemer.",
-		url: "#",
-		icon: "✉️",
-	},
+
 ];
 
 function renderHubLinks() {
