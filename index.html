@@ -13,7 +13,9 @@
     <body>
         <header class="site-header">
             <div class="brand">
-                <img class="brand-logo" src="img/logo.png" alt="Kristiansand katedralskole Gimle" href="https://kkgit.no">
+                <a href="https://kkgit.no">
+                    <img class="brand-logo" src="img/logo.png" alt="Kristiansand katedralskole Gimle">
+                </a>
             </div>
             <p class="header-note">Denne siden er under utvikling</p>
         </header>
@@ -21,13 +23,23 @@
         <section class="hero">
             <div class="hero__shapes" aria-hidden="true"></div>
             <div class="hero__content">
+                <span class="hero__eyebrow">KKG-IT · Elevportal</span>
                 <h1>Velkommen til KKG-IT</h1>
                 <p>Her finner du alt du trenger - fra å tilbakestille passord til å logge inn på skoleplattformer og lese dokumenter om det som skjer hos oss.</p>
                 <label class="hero__search" for="hub-search">
                     <span class="visually-hidden">Søk i snarveier</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                        <path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
                     <input type="search" id="hub-search" placeholder="Hva leter du etter?">
                 </label>
             </div>
+        </section>
+
+        <section class="hub-intro">
+            <h2>Snarveier</h2>
+            <p>De mest brukte verktøyene, samlet på ett sted.</p>
         </section>
 
         <main id="hub-grid" class="hub-grid" aria-live="polite">
